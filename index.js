@@ -13,8 +13,32 @@ app.get("/", async function (req, res) {
   res.render("start", {});
 });
 
+app.get("/beitrag", async function (req, res) {
+  res.render("beitrag", {});
+});
+
+app.get("/profil", async function (req, res) {
+  res.render("profil", {});
+});
+
+app.get("/create_beitrag", async function (req, res) {
+  res.render("create_beitrag", {});
+});
+
+app.get("/login", async function (req, res) {
+  res.render("login", {});
+});
+
+app.get("/registration", async function (req, res) {
+  res.render("registration", {});
+});
+
 app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
+});
+
+app.get("/error", async function (req, res) {
+  res.render("error", {});
 });
 
 /* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */

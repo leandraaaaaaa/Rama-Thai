@@ -5,17 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HTML5 Boilerplate</title>
     <link rel="stylesheet" href="/style.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
 
   <body>
     <header>
-      <a href="/">Home</a>
+      <a href="/">home</a>
+      <a href="/profil">profil</a>
+      <a href="/login">login</a>
     </header>
 
     {{{body}}}
 
     <footer>
       <a href="/impressum">Impressum</a>
+
+      <!--icon -->
+      <i data-feather="facebook"></i>
+      <i data-feather="linkedin"></i>
+      <i data-feather="instagram"></i>
+
+      <script>
+        feather.replace();
+      </script>
+
     </footer>
   </body>
 
