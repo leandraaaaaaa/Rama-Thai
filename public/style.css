@@ -2,7 +2,79 @@
   font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
 }
 
+h1 {
+  font-size: 64px;
+  text-align: center;
+  padding: 50px 0;
+}
+
+p,
+a,
+button {
+  font-size: 18px;
+}
+
+img {
+  max-width: 90vw;
+}
+
 header,
 footer {
-  padding: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  justify-content: space-between;
+  padding: 50px 80px 30px 80px;
+}
+
+.main-menu {
+  display: flex;
+  justify-content: space-around;
+  width: 80vw;
+  padding-left: 50px;
+}
+
+.main-menu a {
+  color: black;
+  text-decoration: none;
+}
+
+.logo {
+  height: 50px;
+  padding-left: 20px;
+}
+
+.navigation {
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  padding: 50px 0;
+}
+
+button {
+  background-color: #d9d9d9;
+  border: none;
+  padding: 10px 80px;
+  border-radius: 45px;
+}
+
+.dropdown {
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -35px;
+  z-index: -1;
+  padding: 50px 0 15px 20px;
+  border-radius: 20px;
+}
+
+.p-dropdown {
+  color: black;
+  text-decoration: none;
+  padding: 5px 0;
 }

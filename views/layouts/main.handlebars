@@ -1,18 +1,27 @@
-<html lang="en">
+<html lang="de">
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HTML5 Boilerplate</title>
     <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
 
   <body>
     <header>
-      <a href="/">home</a>
-      <a href="/profil">profil</a>
-      <a href="/login">login</a>
+      <a href="/"><img class="logo" src="Waegwiser_neu.png" /></a>
+      <div class="main-menu">
+        <a href="/">home</a>
+        <a href="/profil">profil</a>
+        <a href="/login">login</a>
+      </div>
     </header>
 
     {{{body}}}
@@ -20,10 +29,12 @@
     <footer>
       <a href="/impressum">Impressum</a>
 
-      <!--icon -->
-      <i data-feather="facebook"></i>
-      <i data-feather="linkedin"></i>
-      <i data-feather="instagram"></i>
+      <div class="social-media">
+        <!--icon -->
+        <i data-feather="facebook"></i>
+        <i data-feather="linkedin"></i>
+        <i data-feather="instagram"></i>
+      </div>
 
       <script>
         feather.replace();
