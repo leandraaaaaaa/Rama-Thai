@@ -1,11 +1,11 @@
 import { createApp } from "./config.js";
 
 const app = createApp({
-  user: "autumn_star_7622",
-  host: "168.119.168.41",
-  database: "demo",
-  password: "uaioysdfjoysfdf",
-  port: 18324,
+  user: "misty_brook_9996",
+  host: "bbz.cloud",
+  database: "misty_brook_9996",
+  password: "78c6000b38d329e232b91a86ea5c24cc",
+  port: 30211,
 });
 
 /* Startseite */
