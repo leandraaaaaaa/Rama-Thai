@@ -18,6 +18,12 @@ img {
   max-width: 90vw;
 }
 
+.img-beitrag {
+  max-height: 50vh;
+  margin: 20px 0;
+  border-radius: 30px;
+}
+
 header,
 footer {
   padding: 20px;
@@ -50,9 +56,9 @@ footer {
 .navigation {
   width: 100vw;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: baseline;
-  padding: 50px 0;
+  padding: 50px 0 5px 0;
 }
 
 button {
@@ -71,10 +77,43 @@ button {
   z-index: -1;
   padding: 50px 0 15px 20px;
   border-radius: 20px;
+  visibility: hidden;
 }
 
 .p-dropdown {
   color: black;
   text-decoration: none;
   padding: 5px 0;
+}
+
+.dropdown-group:hover .dropdown {
+  visibility: visible;
+}
+
+.beitrage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  border-radius: 50px;
+  border-color: #000000;
+  width: 50vw;
+  height: 40px;
+  padding: 0 10px;
+}
+
+input[type=submit] {
+  background-color: #d9d9d9;
+  border: none;
+  padding: 10px 80px;
+  border-radius: 45px;
+  max-width: 15vw;
 }

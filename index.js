@@ -10,7 +10,8 @@ const app = createApp({
 
 /* Startseite */
 app.get("/", async function (req, res) {
-  res.render("start", {});
+  const users = await app.locals.pool.query("select * from users");
+  res.render("start", { users: users.rows });
 });
 
 app.get("/beitrag", async function (req, res) {
