@@ -21,18 +21,10 @@
 </div>
 
 <div class="beitrage">
-
-  {{#users}}
-    <hr />
-    <h2>{{username}}</h2>
-  {{/users}}
-
-  <a href="/beitrag"><img class="img-beitrag" src="Matterhorn.jpg" /></a>
-  <a href="/beitrag"><img class="img-beitrag" src="Matterhorn.jpg" /></a>
-  <a href="/beitrag"><img class="img-beitrag" src="Matterhorn.jpg" /></a>
-  <a href="/beitrag"><img class="img-beitrag" src="Matterhorn.jpg" /></a>
-  <a href="/beitrag"><img class="img-beitrag" src="Matterhorn.jpg" /></a>
-  <a href="/beitrag"><img class="img-beitrag" src="Matterhorn.jpg" /></a>
+  {{#posts}}
+    <a href="/beitrag/{{id}}"><img
+        class="img-beitrag"
+        src="{{photo_url}}"
+      /></a>
+  {{/posts}}
 </div>
-
-{{!--{{> contactform}}--}}

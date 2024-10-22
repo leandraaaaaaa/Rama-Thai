@@ -1,7 +1,11 @@
-<h1>titel beitrag.</h1>
+{{#posts}}
 
-<p>Beitrags Text</p>
+  <h1>{{titel}}</h1>
 
-<p>#hashtags</p>
+  <p>{{description}}</p>
 
-<img src="Matterhorn.jpg" width="200" />
+  <p>#hashtags</p>
+
+  <img src="/{{photo_url}}" width="200" />
+
+{{/posts}}

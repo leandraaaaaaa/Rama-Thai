@@ -11,11 +11,16 @@ const app = createApp({
 /* Startseite */
 app.get("/", async function (req, res) {
   const users = await app.locals.pool.query("select * from users");
-  res.render("start", { users: users.rows });
+  const posts = await app.locals.pool.query("select * from posts");
+  res.render("start", { posts: posts.rows, users: users.rows });
 });
 
-app.get("/beitrag", async function (req, res) {
-  res.render("beitrag", {});
+app.get("/beitrag/:id", async function (req, res) {
+  const users = await app.locals.pool.query("select * from users");
+  const posts = await app.locals.pool.query(
+    `select * from posts WHERE id = ${req.params.id}`
+  );
+  res.render("beitrag", { posts: posts.rows, users: users.rows });
 });
 
 app.get("/profil", async function (req, res) {
