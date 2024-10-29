@@ -31,6 +31,24 @@ app.get("/create_beitrag", async function (req, res) {
   res.render("create_beitrag", {});
 });
 
+app.post("/create_post", async function (req, res) {
+  await app.locals.pool.query(
+    "INSERT INTO posts (titel, description, kanton, google_maps, photo_url) VALUES ($1, $2, $3, $4, $5)",
+    [
+      req.body.titel,
+      req.body.description,
+      req.body.kanton,
+      req.body.google_maps,
+      req.body.photo_url,
+    ]
+  );
+
+  await app.locals.pool.query("INSERT INTO hashtags (tag_name) VALUES ($1)", [
+    req.body.tag_name,
+  ]);
+  res.redirect("/");
+});
+
 app.get("/login", async function (req, res) {
   res.render("login", {});
 });

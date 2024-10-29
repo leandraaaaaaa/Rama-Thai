@@ -1,20 +1,18 @@
 <h1>bitrag ersteue.</h1>
 
-<form>
+<form action="/create_post" method="post">
   <p>titel</p>
-  <input type="text" />
+  <input type="text" name="titel" />
   <p>beschribig</p>
-  <input type="text" />
+  <input type="text" name="description" />
   <p>hashtags</p>
-  <input type="text" />
+  <input type="text" name="tag_name" />
   <p>kanton</p>
-  <input type="text" />
+  <input type="text" name="kanton" />
   <p>google maps link</p>
-  <input type="text" />
-  <div>
-    <p>foto</p>
-    <input type="image" />
-  </div>
+  <input type="text" name="google_maps" />
+  <p>foto</p>
+  <input type="text" name="photo_url" />
   <input type="submit" value="ersteue" />
 
 </form>
