@@ -24,7 +24,15 @@ app.get("/beitrag/:id", async function (req, res) {
 });
 
 app.get("/profil", async function (req, res) {
-  res.render("profil", {});
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
+  const posts = await app.locals.pool.query(
+    "SELECT * FROM posts WHERE user_id = $1",
+    [req.session.userid]
+  );
+  res.render("profil", { posts: posts.rows });
 });
 
 app.get("/create_beitrag", async function (req, res) {
@@ -33,13 +41,14 @@ app.get("/create_beitrag", async function (req, res) {
 
 app.post("/create_post", async function (req, res) {
   await app.locals.pool.query(
-    "INSERT INTO posts (titel, description, kanton, google_maps, photo_url) VALUES ($1, $2, $3, $4, $5)",
+    "INSERT INTO posts (titel, description, kanton, google_maps, photo_url, user_id) VALUES ($1, $2, $3, $4, $5, $6)",
     [
       req.body.titel,
       req.body.description,
       req.body.kanton,
       req.body.google_maps,
       req.body.photo_url,
+      req.session.userid,
     ]
   );
 

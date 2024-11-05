@@ -4,11 +4,9 @@
 <button type="button">glikte biträg</button>
 <button type="button"><a href="/create_beitrag">bitrag erstelle</a></button>
 
-<img src="Matterhorn.jpg" width="200" />
-
-<div class="like">
-<i data-feather="heart"></i>
-</div>
+{{#posts}}
+  <a href="/beitrag/{{id}}"><img class="img-beitrag" src="{{photo_url}}" /></a>
+{{/posts}}
 
 <script>
   feather.replace();
