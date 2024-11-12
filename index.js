@@ -1,4 +1,4 @@
-import { createApp } from "./config.js";
+import { createApp, upload } from "./config.js";
 
 const app = createApp({
   user: "misty_brook_9996",
@@ -11,7 +11,14 @@ const app = createApp({
 /* Startseite */
 app.get("/", async function (req, res) {
   const users = await app.locals.pool.query("select * from users");
-  const posts = await app.locals.pool.query("select * from posts");
+  let posts = await app.locals.pool.query("select * from posts");
+
+  if (req.query.kanton) {
+    posts = await app.locals.pool.query(
+      "select * from posts where kanton = $1",
+      [req.query.kanton]
+    );
+  }
   res.render("start", { posts: posts.rows, users: users.rows });
 });
 
@@ -39,7 +46,7 @@ app.get("/create_beitrag", async function (req, res) {
   res.render("create_beitrag", {});
 });
 
-app.post("/create_post", async function (req, res) {
+app.post("/create_post", upload.single("photo_url"), async function (req, res) {
   await app.locals.pool.query(
     "INSERT INTO posts (titel, description, kanton, google_maps, photo_url, user_id) VALUES ($1, $2, $3, $4, $5, $6)",
     [
@@ -47,7 +54,7 @@ app.post("/create_post", async function (req, res) {
       req.body.description,
       req.body.kanton,
       req.body.google_maps,
-      req.body.photo_url,
+      req.file.filename,
       req.session.userid,
     ]
   );

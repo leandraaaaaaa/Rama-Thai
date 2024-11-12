@@ -1,5 +1,14 @@
 <h1>fing di perfekt usflug.</h1>
 
+<form action="/" method="GET">
+  <select name="kanton">
+    <option value="fribourg">Fribourg</option>
+    <option value="bern">Bern</option>
+  </select>
+  <input type="submit" />
+
+</form>
+
 <div class="navigation">
   <div class="dropdown-group">
     <button type="button">kanton</button>
@@ -24,7 +33,7 @@
   {{#posts}}
     <a href="/beitrag/{{id}}"><img
         class="img-beitrag"
-        src="{{photo_url}}"
+        src="/uploads/{{photo_url}}"
       /></a>
   {{/posts}}
 </div>

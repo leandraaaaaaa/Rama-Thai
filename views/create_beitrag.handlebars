@@ -1,6 +1,6 @@
 <h1>bitrag ersteue.</h1>
 
-<form action="/create_post" method="post">
+<form action="/create_post" enctype="multipart/form-data" method="post">
   <p>titel</p>
   <input type="text" name="titel" />
   <p>beschribig</p>
@@ -12,7 +12,7 @@
   <p>google maps link</p>
   <input type="text" name="google_maps" />
   <p>foto</p>
-  <input type="text" name="photo_url" />
+  <input type="file" name="photo_url" />
   <input type="submit" value="ersteue" />
 
 </form>
