@@ -52,7 +52,7 @@ app.get("/create_beitrag", async function (req, res) {
 
 app.post("/create_post", upload.single("photo_url"), async function (req, res) {
   await app.locals.pool.query(
-    "INSERT INTO posts (titel, description, kanton, google_maps, photo_url, user_id) VALUES ($1, $2, $3, $4, $5, $6)",
+    "INSERT INTO posts (titel, description, kanton, google_maps, photo_url, user_id, hashtag) VALUES ($1, $2, $3, $4, $5, $6, $7)",
     [
       req.body.titel,
       req.body.description,
@@ -60,12 +60,9 @@ app.post("/create_post", upload.single("photo_url"), async function (req, res) {
       req.body.google_maps,
       req.file.filename,
       req.session.userid,
+      req.body.hashtag,
     ]
   );
-
-  await app.locals.pool.query("INSERT INTO hashtags (tag_name) VALUES ($1)", [
-    req.body.tag_name,
-  ]);
   res.redirect("/");
 });
 
