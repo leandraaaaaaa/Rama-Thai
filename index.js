@@ -39,7 +39,11 @@ app.get("/profil", async function (req, res) {
     "SELECT * FROM posts WHERE user_id = $1",
     [req.session.userid]
   );
-  res.render("profil", { posts: posts.rows });
+  const liked = await app.locals.pool.query(
+    "SELECT posts.* FROM posts INNER JOIN likes ON posts.id = likes.post_id WHERE likes.user_id = $1",
+    [req.session.userid]
+  );
+  res.render("profil", { posts: posts.rows, liked: liked.rows });
 });
 
 app.get("/create_beitrag", async function (req, res) {
@@ -62,6 +66,18 @@ app.post("/create_post", upload.single("photo_url"), async function (req, res) {
   await app.locals.pool.query("INSERT INTO hashtags (tag_name) VALUES ($1)", [
     req.body.tag_name,
   ]);
+  res.redirect("/");
+});
+
+app.post("/like/:id", async function (req, res) {
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
+  await app.locals.pool.query(
+    "INSERT INTO likes (post_id, user_id) VALUES ($1, $2)",
+    [req.params.id, req.session.userid]
+  );
   res.redirect("/");
 });
 

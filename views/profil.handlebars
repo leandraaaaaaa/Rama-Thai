@@ -1,13 +1,37 @@
 <h1>hallo username.</h1>
 
-<button type="button">dini biträg</button>
-<button type="button">glikte biträg</button>
+<button type="button" class="filter" id="posts">dini biträg</button>
+<button type="button" class="filter" id="likes">glikte biträg</button>
 <button type="button"><a href="/create_beitrag">bitrag erstelle</a></button>
 
-{{#posts}}
-  <a href="/beitrag/{{id}}"><img class="img-beitrag" src="{{photo_url}}" /></a>
-{{/posts}}
+<div class="posts">
+  {{#posts}}
+    <a href="/beitrag/{{id}}"><img
+        class="img-beitrag"
+        src="/uploads/{{photo_url}}"
+      /></a>
+  {{/posts}}
+</div>
+
+<div class="likes" style="display: none;">
+  {{#liked}}
+    <a href="/beitrag/{{id}}"><img
+        class="img-beitrag"
+        src="/uploads/{{photo_url}}"
+      /></a>
+  {{/liked}}
+</div>
 
 <script>
   feather.replace();
+</script>
+
+<script>
+  function applyFilter() { const id = this.id; console.log(id); if(id ==
+  "posts") { document.querySelector(".posts").style.display = 'block';
+  document.querySelector(".likes").style.display = 'none'; } if(id == "likes") {
+  document.querySelector(".posts").style.display = 'none';
+  document.querySelector(".likes").style.display = 'block'; } } const filters =
+  document.querySelectorAll(".filter"); for(const filter of filters) {
+  filter.addEventListener('click', applyFilter) }
 </script>
