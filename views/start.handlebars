@@ -66,12 +66,19 @@
 
 <div class="beitrage">
   {{#posts}}
-    <a href="/beitrag/{{id}}"><img
-        class="img-beitrag"
-        src="/uploads/{{photo_url}}"
-      /></a>
-    <form action="/like/{{id}}" enctype="multipart/form-data" method="POST">
-      <input type="image" src="/heart.svg" />
-    </form>
+    <div class="onebeitrag">
+      <a href="/beitrag/{{id}}"><img
+          class="img-beitrag"
+          src="/uploads/{{photo_url}}"
+        /></a>
+      <form
+        class="like"
+        action="/like/{{id}}"
+        enctype="multipart/form-data"
+        method="POST"
+      >
+        <input class="heart" type="image" src="/heart.svg" />
+      </form>
+    </div>
   {{/posts}}
 </div>

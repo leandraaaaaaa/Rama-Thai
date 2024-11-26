@@ -19,9 +19,11 @@ img {
 }
 
 .img-beitrag {
-  max-height: 50vh;
+  height: 50vh;
+  width: 30vw;
   margin: 20px 0;
   border-radius: 30px;
+  object-fit: cover;
 }
 
 header,
@@ -96,6 +98,21 @@ button {
   justify-content: space-around;
 }
 
+.onebeitrag {
+  position: relative;
+  margin: 0 1vw;
+}
+
+.like {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.heart {
+  max-width: 3vw;
+}
+
 form {
   display: flex;
   align-items: center;
@@ -110,7 +127,7 @@ input {
   padding: 0 10px;
 }
 
-input[type=submit] {
+input[type="submit"] {
   background-color: #d9d9d9;
   border: none;
   padding: 10px 80px;
