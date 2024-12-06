@@ -1,15 +1,20 @@
 {{#posts}}
 
   <h1>{{titel}}</h1>
+  <div id="beitrage-overview">
+    <div class="left">
+      <img src="/uploads/{{photo_url}}" class="img-beitrag-overview" />
+    </div>
 
-  <h2>{{kanton}}</h2>
+    <div class="right">
+      <h2>{{kanton}}</h2>
 
-  <p>{{description}}</p>
+      <p>{{description}}</p>
 
-  <p>#{{hashtag}}</p>
+      <p class="hashtag">#{{hashtag}}</p>
 
-  <a href="{{google_maps}}">{{google_maps}}</a>
-
-  <img src="/uploads/{{photo_url}}" />
+      <a href="{{google_maps}}">{{google_maps}}</a>
+    </div>
+  </div>
 
 {{/posts}}

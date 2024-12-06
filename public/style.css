@@ -8,10 +8,18 @@ h1 {
   padding: 50px 0;
 }
 
+h2 {
+  font-size: 45px;
+}
+
 p,
 a,
 button {
   font-size: 18px;
+}
+
+p.hashtag {
+  font-weight: bold;
 }
 
 img {
@@ -24,6 +32,19 @@ img {
   margin: 20px 0;
   border-radius: 30px;
   object-fit: cover;
+}
+
+.img-beitrag-overview {
+  max-height: 60vh;
+  max-width: 40vw;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+#beitrage-overview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 header,
@@ -60,7 +81,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
-  padding: 50px 0 5px 0;
+  padding: 50px 0 20px 0;
 }
 
 button {
@@ -75,9 +96,7 @@ button {
   display: flex;
   flex-direction: column;
   position: relative;
-  top: -35px;
-  z-index: -1;
-  padding: 50px 0 15px 20px;
+  padding: 10%;
   border-radius: 20px;
   visibility: hidden;
 }
@@ -92,7 +111,11 @@ button {
   visibility: visible;
 }
 
-.beitrage {
+.auswaehlen {
+  margin-bottom: 0;
+}
+
+#beitrage {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -130,7 +153,12 @@ input {
 input[type="submit"] {
   background-color: #d9d9d9;
   border: none;
-  padding: 10px 80px;
+  padding: 1vh;
   border-radius: 45px;
   max-width: 15vw;
+  margin-top: 2vh;
+}
+
+input[type="file"] {
+  padding: 0 20%;
 }

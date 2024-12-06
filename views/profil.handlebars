@@ -1,10 +1,12 @@
-<h1>hallo username.</h1>
+<h1>hallo, schön das du da bisch.</h1>
 
-<button type="button" class="filter" id="posts">dini biträg</button>
-<button type="button" class="filter" id="likes">glikte biträg</button>
-<button type="button"><a href="/create_beitrag">bitrag erstelle</a></button>
+<div class="navigation">
+  <button type="button" class="filter" id="posts">dini biträg</button>
+  <button type="button" class="filter" id="likes">glikte biträg</button>
+  <button type="button"><a href="/create_beitrag">bitrag erstelle</a></button>
+</div>
 
-<div class="posts">
+<div class="posts" id="beitrage">
   {{#posts}}
     <a href="/beitrag/{{id}}"><img
         class="img-beitrag"
@@ -13,7 +15,7 @@
   {{/posts}}
 </div>
 
-<div class="likes" style="display: none;">
+<div class="likes" id="beitrage" style="display: none;">
   {{#liked}}
     <a href="/beitrag/{{id}}"><img
         class="img-beitrag"
@@ -28,10 +30,10 @@
 
 <script>
   function applyFilter() { const id = this.id; console.log(id); if(id ==
-  "posts") { document.querySelector(".posts").style.display = 'block';
+  "posts") { document.querySelector(".posts").style.display = 'flex';
   document.querySelector(".likes").style.display = 'none'; } if(id == "likes") {
   document.querySelector(".posts").style.display = 'none';
-  document.querySelector(".likes").style.display = 'block'; } } const filters =
+  document.querySelector(".likes").style.display = 'flex'; } } const filters =
   document.querySelectorAll(".filter"); for(const filter of filters) {
   filter.addEventListener('click', applyFilter) }
 </script>

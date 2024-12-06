@@ -18,6 +18,11 @@ app.get("/", async function (req, res) {
       "select * from posts where kanton = $1",
       [req.query.kanton]
     );
+  } else if (req.query.hashtag) {
+    posts = await app.locals.pool.query(
+      "select * from posts where hashtag = $1",
+      [req.query.hashtag]
+    );
   }
   res.render("start", { posts: posts.rows, users: users.rows });
 });
