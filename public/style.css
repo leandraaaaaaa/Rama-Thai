@@ -68,16 +68,19 @@ nav ul li a {
 h1 {
   color: #66b245;
   font-weight: 400;
-  font-size: 64px;
+  font-size: 50px;
 }
 
 p {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .buttons {
-  margin-top: 20px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .btn {
@@ -85,7 +88,7 @@ p {
   color: white;
   padding: 10px 20px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 15px;
   margin: 10px;
   display: inline-block;
 }
