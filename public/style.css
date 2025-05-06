@@ -1,5 +1,5 @@
 * {
-  font-family: Arial, sans-serif;
+  font-family: Inter, sans-serif;
 }
 
 body {
@@ -8,8 +8,18 @@ body {
   text-align: center;
 }
 
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome {
+  max-width: 60vw;
+}
+
 header {
-  background-color: #7cb342;
+  background-color: #66b245;
   padding: 15px 0;
   color: white;
   display: flex;
@@ -38,7 +48,12 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.logo {
+  max-height: 50px;
 }
 
 .hero img {
@@ -51,7 +66,14 @@ nav ul li a {
 }
 
 h1 {
-  color: #7cb342;
+  color: #66b245;
+  font-weight: 400;
+  font-size: 64px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 24px;
 }
 
 .buttons {
@@ -59,7 +81,7 @@ h1 {
 }
 
 .btn {
-  background-color: #7cb342;
+  background-color: #66b245;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -69,7 +91,13 @@ h1 {
 }
 
 footer {
-  background-color: #f8f8f8;
+  border-top: 1px solid grey;
   padding: 20px;
-  font-size: 14px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer_p {
+  font-size: 15px;
 }
