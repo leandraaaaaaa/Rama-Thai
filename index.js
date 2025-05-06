@@ -22,7 +22,7 @@ app.get("/ueberuns", async function (req, res) {
 });
 
 app.get("/kontakt", async function (req, res) {
-  res.render("Kontakt");
+  res.render("kontakt");
 });
 
 /* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */
