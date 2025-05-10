@@ -18,9 +18,36 @@ body {
   max-width: 60vw;
 }
 
-.kontakt-seite {
+#kontakt-seite {
   margin: 10vh;
   display: flex;
+  text-align: left;
+}
+
+.kontaktangaben {
+  padding-top: 10vh;
+}
+
+.oeffnungszeiten {
+  padding-top: 10vh;
+}
+
+.links,
+.rechts {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  max-width: 30vw;
+  padding-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="submit"] {
+  max-width: 15vw;
 }
 
 .bold {
@@ -80,6 +107,13 @@ h1 {
   font-size: 50px;
 }
 
+h2 {
+  color: #66b245;
+  font-weight: 400;
+  font-size: 35px;
+  padding-top: 30px;
+}
+
 p {
   font-weight: 400;
   font-size: 18px;
@@ -119,7 +153,19 @@ input {
 }
 
 .plate {
+  min-width: 60vw;
+  padding: 5vh 0;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.beschreibung {
+  padding: 30px;
+}
+
+.menu {
+  padding-bottom: 10vh;
 }
 
 footer {
